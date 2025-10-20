@@ -1,0 +1,29 @@
+name: My First Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:                        # renamed the job from say-hello → build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello Maryam! 🎉 Workflow started successfully."
+
+      - name: List project files
+        run: ls -la
+
+      - name: Show current date and time
+        run: date
+
+      - name: Build simulation
+        run: |
+          echo "Step 1: Installing dependencies..."
+          echo "Step 2: Compiling project..."
+          echo "Step 3: Build finished successfully ✅"
